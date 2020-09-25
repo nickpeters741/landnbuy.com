@@ -1,0 +1,299 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title landNbuy
+    meta(content='width=device-width, initial-scale=1.0', name='viewport')
+    meta(content='', name='keywords')
+    meta(content='', name='description')
+    // Favicons
+    link(href='/img/favicon.png', rel='icon')
+    link(href='/img/apple-touch-icon.png', rel='apple-touch-icon')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', rel='stylesheet')
+    // Bootstrap CSS File
+    link(href='/lib/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Libraries CSS Files
+    link(href='/lib/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    link(href='/lib/animate/animate.min.css', rel='stylesheet')
+    link(href='/lib/ionicons/css/ionicons.min.css', rel='stylesheet')
+    link(href='/lib/owlcarousel/assets/owl.carousel.min.css', rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css', rel='stylesheet')
+    // Main Stylesheet File
+    link(href='/css/style.css', rel='stylesheet')
+
+
+    //
+      =======================================================
+      Company: landNbuy
+      Author: gaseema
+      email: gaseema.n@gmail.com
+      =======================================================
+  body
+    .click-closed
+    // / Form Search Star /
+    .box-collapse
+      .title-box-d
+        h3.title-d Search Property
+      span.close-box-collapse.right-boxed.ion-ios-close
+      .box-collapse-wrap.form
+        form.form-a#formMainSearch(action="/search/full/Land" method="post")
+          .row
+            .col-md-12
+              .form-group
+                label(for='#mainSearchLocation') County
+                select#ptyLocation.form-control.form-control-lg.form-control-a(name='location' style='font-size: 1em; padding: 0px 14px; height: 37px;')
+                  option Nairobi
+                  option Baringo
+                  option Bomet
+                  option Bungoma
+                  option Busia
+                  option Elgeyo-Marakwet
+                  option Embu
+                  option Garissa
+                  option Homa Bay
+                  option Isiolo
+                  option Kajiado
+                  option Kakamega
+                  option Kericho
+                  option Kiambu
+                  option Kilifi
+                  option Kirinyaga
+                  option Kisii
+                  option Kisumu
+                  option Kitui
+                  option Kwale
+                  option Laikipia
+                  option Lamu
+                  option Machakos
+                  option Makueni
+                  option Mandera
+                  option Marsabit
+                  option Meru
+                  option Migori
+                  option Mombasa
+                  option Murang'a
+                  option Nakuru
+                  option Nandi
+                  option Narok
+                  option Nyamira
+                  option Nyandarua
+                  option Nyeri
+                  option Samburu
+                  option Siaya
+                  option Taita–Taveta
+                  option Tana River
+                  option Tharaka-Nithi
+                  option Trans-Nzoia
+                  option Turkana
+                  option Uasin Gishu
+                  option Vihiga
+                  option Wajir
+                  option West Pokot
+            .col-md-6.mb-2
+              .form-group
+                label(for='mainSearchCategory') Category
+                select#mainSearchCategory.form-control.form-control-lg.form-control-a(onchange='mainSearchCategoryChange()' name='category')
+                  option Land
+                  option Building
+            
+            
+            .col-md-6.mb-2
+              .form-group
+                label(for='mainSearchType') Type
+                select#mainSearchType.form-control.form-control-lg.form-control-a(name='type')
+                  option For Rent
+                  option For Sale
+
+            
+            .col-md-6.mb-2
+              .form-group
+                label(for='mainSearchMinPrice') Min Price
+                input.form-control.form-control-lg.form-control-a#mainSearchMinPrice(type='number' placeholder='Min Price' name='minPrice')
+            .col-md-6.mb-2
+              .form-group
+                label(for='#mainSearchMaxPrice') Max Price
+                input.form-control.form-control-lg.form-control-a#mainSearchMaxPrice(type='number' placeholder='Max Price' name='maxPrice')
+            .col-md-12
+              button.btn.btn-b(type='submit') 
+                #nextStep Search Property
+                .loader(style='height: 1px; padding-bottom: 25px; display: none;')
+                  span.loader__dot .
+                  span.loader__dot .
+                  span.loader__dot .
+    // / Form Search End /
+    // / Nav Star /
+    nav.navbar.navbar-default.navbar-trans.navbar-expand-lg.fixed-top
+      .container
+        button.navbar-toggler.collapsed(type='button', data-toggle='collapse', data-target='#navbarDefault', aria-controls='navbarDefault', aria-expanded='false', aria-label='Toggle navigation' style='background: white;')
+          span
+          span
+          span
+        a.navbar-brand.text-brand(href='/')
+          | land
+          span.color-b N
+          | buy
+          
+        button.btn.btn-link.nav-search.navbar-toggle-box-collapse.d-md-none(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo01', aria-expanded='false')
+          span.fa.fa-search(aria-hidden='true')
+        #navbarDefault.navbar-collapse.collapse.justify-content-center
+          ul.navbar-nav
+            li.nav-item.dropdown
+              a#navbarDropdown.nav-link.dropdown-toggle(role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                | Properties
+              .dropdown-menu(aria-labelledby='navbarDropdown')
+                a.dropdown-item() Land
+                ul
+                  li 
+                    a(href='/lands/residential/1') Residential
+                  li 
+                    a(href='/lands/industrial/1') Industrial
+                  li 
+                    a(href='/lands/commercial/1') Commercial
+                  li 
+                    a(href='/lands/agricultural/1') Agricultural
+
+                a.dropdown-item() Buildings
+                ul
+                  li 
+                    a() Residential
+                    ul
+                      li 
+                        a(href='/buildings/apartments/1') Apartments
+                      li 
+                        a(href='/buildings/bangalows/1') Bangalow
+                      li 
+                        a(href='/buildings/mansions/1') Mansion  
+                  li 
+                    a(href='/buildings/commercial/1') Commercial        
+                  li
+                    a(href='/buildings/industrial/1') Industrial        
+            li.nav-item
+              a.nav-link#requestPathName(href='#section-special-request') Request Property
+            li.nav-item.dropdown
+              a#navbarDropdown3.nav-link.dropdown-toggle(style='', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                | List Property
+              .dropdown-menu(aria-labelledby='navbarDropdown3')
+                a.dropdown-item(href='/list-property/building') List Building
+                a.dropdown-item(href='/list-property/land') List Land
+            li.nav-item
+              a.nav-link(href='/contact') Contact Us
+            li.nav-item.dropdown
+              a#navbarDropdown3.nav-link.dropdown-toggle(style='', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                | Settings
+              .dropdown-menu(aria-labelledby='navbarDropdown3')
+                a.dropdown-item(href='/agents/signup') Become An Agent
+                a.dropdown-item(href='/agent/profile') Agent Profile
+                if userActive === true
+                  a.dropdown-item(href='/logout') Logout
+                else
+                  a.dropdown-item(href='/agent/login') Login
+        button.btn.btn-b-n.navbar-toggle-box-collapse.d-none.d-md-block(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo01', aria-expanded='false')
+          span.fa.fa-search(aria-hidden='true')
+    // / Nav End /
+    block content
+    // / footer Star /
+    //section.section-footer
+      .container
+        .row
+          .col-sm-12.col-md-4
+            .widget-a
+              .w-header-a
+                h3.w-title-a.text-brand landNbuy
+              .w-body-a
+                p.w-text-a.color-text-a(style='color: black;')
+                  | Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
+                  | sed aute irure.
+              .w-footer-a
+                ul.list-unstyled
+                  li.color-a
+                    span.color-text-a(style='color: black;') Phone .
+                      span(style='color:black;') support@landnbuy.com
+                  li.color-a
+                    span.color-text-a(style='color: black;') Email .
+                      span(style='color:black;') +54 356 945234
+          .col-sm-12.col-md-4.section-md-t3
+            .widget-a
+              .w-header-a
+                h3.w-title-a.text-brand The Company
+              .w-body-a
+                .w-body-a
+                  ul.list-unstyled
+                    li.item-list-a
+                      i.fa.fa-angle-right
+                      a(href='#') Site Map
+                    li.item-list-a
+                      i.fa.fa-angle-right
+                      a(href='#') Legal
+                    li.item-list-a
+                      i.fa.fa-angle-right
+                      a(href='#') Agent Admin
+                    li.item-list-a
+                      i.fa.fa-angle-right
+                      a(href='#') Careers
+                    li.item-list-a
+                      i.fa.fa-angle-right
+                      a(href='#') Affiliate
+                    li.item-list-a
+                      i.fa.fa-angle-right
+                      a(href='#') Privacy Policy
+          .col-sm-12.col-md-4.section-md-t3
+            .widget-a
+              .w-header-a
+                h3.w-title-a.text-brand International sites
+              .w-body-a
+                ul.list-unstyled
+                  li.item-list-a
+                    i.fa.fa-angle-right
+                    a(href='#') Venezuela
+                  li.item-list-a
+                    i.fa.fa-angle-right
+                    a(href='#') China
+                  li.item-list-a
+                    i.fa.fa-angle-right
+                    a(href='#') Hong Kong
+                  li.item-list-a
+                    i.fa.fa-angle-right
+                    a(href='#') Argentina
+                  li.item-list-a
+                    i.fa.fa-angle-right
+                    a(href='#') Singapore
+                  li.item-list-a
+                    i.fa.fa-angle-right
+                    a(href='#') Philippines)
+
+
+    footer
+      .container
+        .row
+          .col-md-12
+            nav.nav-footer
+              ul.list-inline
+                li.list-inline-item(style='border-right: solid white 1px; padding-right: 10px;')
+                  a(href='/') Home
+                li.list-inline-item(style='border-right: solid white 1px; padding-right: 10px;')
+                  a(target='_blank' href='/documents/policy.pdf') Privacy Policy
+                li.list-inline-item
+                  a(href='/contact') Contact
+            .socials-a
+              ul.list-inline
+                li.list-inline-item
+                  a(href='https://www.facebook.com/landnbuy' target='_blank')
+                    i.fa.fa-facebook#facebook(aria-hidden='true')
+                li.list-inline-item
+                  a(href='https://twitter.com/landnbuy' target='_blank')
+                    i.fa.fa-twitter#twitter(aria-hidden='true')
+                li.list-inline-item
+                  a(href='https://www.instagram.com/landnbuy/?hl=en' target='_blank')
+                    i.fa.fa-instagram#instagram(aria-hidden='true')
+            .copyright-footer
+              p.copyright.color-text-a(style='color: black;')
+                | © Copyright
+                a.color-a(target='_blank' href='/documents/policy.pdf' style='color:#0590F2 !important; padding-left: 5px;') landNbuy
+                |  All Rights Reserved.
+    // / Footer End /
+    #panorama
+    #snackbar
+    script(src='/js/toast.js')
+    script(src='/js/search.js')
+    block scripts

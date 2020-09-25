@@ -1,0 +1,54 @@
+extends layout
+block content
+    section.intro-single
+      .container
+        .row
+          .col-md-12.col-lg-8
+            .title-single-box
+              h1.title-single Buy Request: #{heading}
+              span.color-text-a(style='color: black !important;')
+                | Leave your details below and we'll get back to you as soon as possible. Thank you for choosing our services.
+    section
+      .container
+        .row
+            .col-sm-12.section-t8
+            form(style='margin-bottom: 80px;')
+                .row
+                .col-md-12
+                    form.form-a.contactForm(action='' method='post' role='form')
+                    #errormessage
+                    .row
+                        .col-sm-12(style='padding-bottom: 15px;')
+                          span(style='color: #9a9a9a;') Full Name 
+                              span(style='color: red;') *
+                          .form-group(style='margin-top: 5px;')
+                              input.form-control.form-control-lg.form-control-a#name(type='text' placeholder='Enter your full name')
+                              .validation
+                        .col-sm-12(style='padding-bottom: 15px;')
+                          span(style='color: #9a9a9a;') Email 
+                              span(style='color: red;') *
+                          .form-group(style='margin-top: 5px;')
+                              input.form-control.form-control-lg.form-control-a#email(type='text' placeholder='Enter your email address')
+                              .validation
+                        .col-sm-12(style='padding-bottom: 15px;')
+                          span(style='color: #9a9a9a;') Phone Number 
+                              span(style='color: red;') *
+                          .form-group(style='margin-top: 5px;')
+                              input.form-control.form-control-lg.form-control-a#phoneNo(type='number' placeholder='Enter your phone number')
+                              .validation
+                        .col-md-12
+                          div.btn.btn-a(onclick='buyRequest();') 
+                            #nextStep Submit Request
+                            .loader(style='height: 1px; padding-bottom: 25px; display: none;')
+                              span.loader__dot .
+                              span.loader__dot .
+                              span.loader__dot .
+    // JavaScript Libraries
+    script(src='/lib/jquery/jquery.min.js')
+    script(src='/lib/jquery/jquery-migrate.min.js')
+    script(src='/lib/popper/popper.min.js')
+    script(src='/lib/bootstrap/js/bootstrap.min.js')
+    script(src='/lib/easing/easing.min.js')
+    script(src='/lib/owlcarousel/owl.carousel.min.js')
+    script(src='/lib/scrollreveal/scrollreveal.min.js')
+    script(src='/js/main.js')

@@ -1,0 +1,66 @@
+extends layout
+block content
+  // / Intro Single star /
+  section.intro-single
+    .container
+      .row
+        .col-md-12.col-lg-8
+          .title-single-box
+            h1.title-single Become an Agent #Stage Two
+            span.color-text-a(style='color: black !important;')
+              | Book a day for an interview.
+  // / Intro Single End /
+  // / Stage 2 Interview  Start/
+  section.contact
+  .container
+      .row
+      .col-sm-12.section-t8
+          form(style='margin-bottom: 80px;')
+            .row
+              .col-md-12
+                form.form-a.contactForm(action='' method='post' role='form')
+                    #sendmessage Your message has been sent. Thank you!
+                    #errormessage
+                    .row
+                      .col-sm-12(style='padding-bottom: 15px; ')
+                          p(style='color: black; font-size: 1.2em;') Select type of meating below
+                          div(style='padding-left:15px;')
+                            .form-check.form-check-inline
+                              input#interviewRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+                              label.form-check-label(for='inlineRadio1' style='color: black; font-size: 1.3em; padding-right: 40px;') Video Call
+                            .form-check.form-check-inline
+                              input#interviewRadio2.form-check-input(type='radio', name='inlineRadioOptions', value='option2' checked='')
+                              label.form-check-label(for='inlineRadio2' style='color: black; font-size: 1.3em; padding-right: 40px;') Visit our offices
+                      .col-sm-12(style='padding-bottom: 15px;margin-top: 45px;')
+                        p(style='color: black; font-size: 1.2em;') Select a day and time for the interview below
+                        div(style='overflow:hidden;')
+                          .form-group(style='padding-left:15px;')
+                            .row
+                              .col-md-8
+                                #datetimepicker12
+
+                      .col-md-12
+                        div.btn.btn-a(onclick='step2('+JSON.stringify(userID)+');')
+                          #nextStep Next Step
+                          .loader(style='height: 1px; padding-bottom: 25px; display: none;')
+                            span.loader__dot .
+                            span.loader__dot .
+                            span.loader__dot .
+  // / Stage 2 Interview  End/
+
+  a.back-to-top(href='#')
+    i.fa.fa-chevron-up
+  #preloader
+  // JavaScript Libraries
+  script(src='/lib/jquery/jquery.min.js')
+  script(src='/lib/jquery/jquery-migrate.min.js')
+  script(src='/lib/popper/popper.min.js')
+  script(src='/lib/bootstrap/js/bootstrap.min.js')
+  script(src='/lib/easing/easing.min.js')
+  script(src='/lib/owlcarousel/owl.carousel.min.js')
+  script(src='/lib/scrollreveal/scrollreveal.min.js')
+  script(src='/js/main.js')
+  script(src='/js/moment.js')
+  script(src='/js/agentSignup.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js')
+

@@ -1,0 +1,367 @@
+extends layout
+block content
+  .heroSection
+    .heroContent
+      div(style='max-width: 840px; margin: 0px auto;')
+        p(style='text-align: center; background: #0000001f; width: max-content; margin-left: auto; margin-right: auto; padding: 10px; border-radius: 5px;font-size: 2vw; margin-bottom: 60px;') Secure your next real estate investment
+        ul#myTab.nav.nav-tabs(role='tablist')
+          li.nav-item
+            a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Building
+          li.nav-item
+            a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Land
+        #myTabContent.tab-content
+          #home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+            form(action='/search/buildings' method='post')
+              ul.mainSearch
+                li
+                  span.searchHeader PROPERTY STATUS
+                  .input-group.mb-3
+                    .input-group-prepend#ptyStatus
+                    select#inputGroupSelect01.custom-select(name='ptyStatus')
+                      option(selected='') Rent
+                      option(value='Buy') Buy
+                      //- option(value='2') Lease
+                li
+                  span.searchHeader Category
+                  .input-group.mb-3
+                    .input-group-prepend#ptyCategory
+                    select#inputGroupSelect02.custom-select(name='ptyCategory')
+                      option(selected='') Residential
+                      option(value='Commercial') Commercial
+                      option(value='Industrial') Industrial
+                      option(value='Rentals') Rentals
+                li
+                  div(style='width: 170px;height: 68px;')
+                    span.searchHeader County
+                    .form-group
+                        select#ptyLocation.form-control.form-control-lg.form-control-a(name='location' style='font-size: 1em; padding: 0px 14px; height: 37px;')
+                          option Nairobi
+                          option Baringo
+                          option Bomet
+                          option Bungoma
+                          option Busia
+                          option Elgeyo-Marakwet
+                          option Embu
+                          option Garissa
+                          option Homa Bay
+                          option Isiolo
+                          option Kajiado
+                          option Kakamega
+                          option Kericho
+                          option Kiambu
+                          option Kilifi
+                          option Kirinyaga
+                          option Kisii
+                          option Kisumu
+                          option Kitui
+                          option Kwale
+                          option Laikipia
+                          option Lamu
+                          option Machakos
+                          option Makueni
+                          option Mandera
+                          option Marsabit
+                          option Meru
+                          option Migori
+                          option Mombasa
+                          option Murang'a
+                          option Nakuru
+                          option Nandi
+                          option Narok
+                          option Nyamira
+                          option Nyandarua
+                          option Nyeri
+                          option Samburu
+                          option Siaya
+                          option Taita–Taveta
+                          option Tana River
+                          option Tharaka-Nithi
+                          option Trans-Nzoia
+                          option Turkana
+                          option Uasin Gishu
+                          option Vihiga
+                          option Wajir
+                          option West Pokot
+
+
+
+                li
+                  span(style='display: block; font-weight: bold;')
+                  button(style=' background: #0091F8; color: white; padding: 5px 20px; border: none; border-radius: 5px; font-weight: bold;' type='submit') FIND PROPERTIES
+
+                  //- a(data-toggle='collapse', href='#collapseExample', role='button', aria-expanded='false', aria-controls='collapseExample' style=' color: #0091F8;')
+                  //-   | + ADVANCED FILTERS
+                  //- button(style=' background: #0091F8; color: white; padding: 5px 20px; border: none; border-radius: 5px; font-weight: bold;' onclick='searchProperty();') FIND PROPERTIES
+            #collapseExample.collapse
+              .card.card-body
+                | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          #profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab') 
+            form(action='/search/lands' method='post')
+              ul.mainSearch
+                li
+                  span.searchHeader PROPERTY STATUS
+                  .input-group.mb-3
+                    .input-group-prepend#ptyStatus
+                    select#inputGroupSelect01.custom-select(name='ptyStatus')
+                      option(selected='') Rent
+                      option(value='Buy') Buy
+                      //- option(value='2') Lease
+                li
+                  span.searchHeader Category
+                  .input-group.mb-3
+                    .input-group-prepend#ptyCategory
+                    select#inputGroupSelect02.custom-select(name='ptyCategory')
+                      option(selected='') Residential
+                      option(value='Commercial') Commercial
+                      option(value='Industrial') Industrial
+                      option(value='Agricultural') Agricultural
+                li
+                  div(style='width: 170px;height: 68px;')
+                    span.searchHeader County
+                    .form-group
+                        select#ptyLocation.form-control.form-control-lg.form-control-a(name='location' style='font-size: 1em; padding: 0px 14px; height: 37px;')
+                          option Nairobi
+                          option Baringo
+                          option Bomet
+                          option Bungoma
+                          option Busia
+                          option Elgeyo-Marakwet
+                          option Embu
+                          option Garissa
+                          option Homa Bay
+                          option Isiolo
+                          option Kajiado
+                          option Kakamega
+                          option Kericho
+                          option Kiambu
+                          option Kilifi
+                          option Kirinyaga
+                          option Kisii
+                          option Kisumu
+                          option Kitui
+                          option Kwale
+                          option Laikipia
+                          option Lamu
+                          option Machakos
+                          option Makueni
+                          option Mandera
+                          option Marsabit
+                          option Meru
+                          option Migori
+                          option Mombasa
+                          option Murang'a
+                          option Nakuru
+                          option Nandi
+                          option Narok
+                          option Nyamira
+                          option Nyandarua
+                          option Nyeri
+                          option Samburu
+                          option Siaya
+                          option Taita–Taveta
+                          option Tana River
+                          option Tharaka-Nithi
+                          option Trans-Nzoia
+                          option Turkana
+                          option Uasin Gishu
+                          option Vihiga
+                          option Wajir
+                          option West Pokot
+
+
+                li
+                  span(style='display: block; font-weight: bold;')
+                  button(style=' background: #0091F8; color: white; padding: 5px 20px; border: none; border-radius: 5px; font-weight: bold;' type='submit') FIND PROPERTIES
+
+                  //- a(data-toggle='collapse', href='#collapseExample', role='button', aria-expanded='false', aria-controls='collapseExample' style=' color: #0091F8;')
+                  //-   | + ADVANCED FILTERS
+                  //- button(style=' background: #0091F8; color: white; padding: 5px 20px; border: none; border-radius: 5px; font-weight: bold;' onclick='searchProperty();') FIND PROPERTIES
+            #collapseExample.collapse
+              .card.card-body
+                | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+
+        
+  // / Property Star /
+  section.section-property.section-t8
+    .container
+      .row
+        .col-md-12
+          .title-wrap.d-flex.justify-content-between
+            .title-box
+              h2.title-a Latest Lands
+            .title-link
+              a(href='/lands/show/all/1')
+                | All Lands
+                span.ion-ios-arrow-forward
+      #property-carousel.owl-carousel.owl-theme
+        for land in data.land
+          .carousel-item-b
+            .card-box-a.card-shadow
+              .img-box-a
+                img.img-a.img-fluid(src='/uploads/'+land.images[0], alt='')
+              .card-overlay
+                .card-overlay-a-content
+                  .card-header-a
+                    h2.card-title-a
+                      a(href='/land/'+land.category+'/'+land._id)
+                        | #{land.heading}
+                        br
+                        span(style='font-size:0.5em;')
+                         | #{land.location}
+                  .card-body-a
+                    .price-box.d-flex
+                      span.price-a rent | KES #{Number(land.price).toLocaleString()}
+                    a.link-a(href='/land/'+land.category+'/'+land._id)
+                      | Click here to view
+                      span.ion-ios-arrow-forward
+                  //.card-footer-a
+                    ul.card-info.d-flex.justify-content-around
+                      li
+                        h4.card-info-title Area
+                        span
+                          | 340m
+                          sup 2
+                      li
+                        h4.card-info-title Beds
+                        span 2
+                      li
+                        h4.card-info-title Baths
+                        span 4
+                      li
+                        h4.card-info-title Garages
+                        span 1
+  // / Property Star /
+  section.section-property.section-t8
+    .container
+      .row
+        .col-md-12
+          .title-wrap.d-flex.justify-content-between
+            .title-box
+              h2.title-a Latest Buildings
+            .title-link
+              a(href='/buildings/show/all/1')
+                | All Buildings
+                span.ion-ios-arrow-forward
+      #property-carousel2.owl-carousel.owl-theme
+        for building in data.building
+          .carousel-item-b
+            .card-box-a.card-shadow
+              .img-box-a
+                img.img-a.img-fluid(src='/uploads/'+building.images[0], alt='')
+              .card-overlay
+                .card-overlay-a-content
+                  .card-header-a
+                    h2.card-title-a
+                      a(href='/buildings/'+building.category+'/'+building._id)
+                        | #{building.heading}
+                        br
+                        span(style='font-size:0.5em;')
+                         | #{building.location}
+                  .card-body-a
+                    .price-box.d-flex
+                      span.price-a rent | KES #{Number(building.price).toLocaleString()}
+                    a.link-a(href='/buildings/'+building.category+'/'+building._id)
+                      | Click here to view
+                      span.ion-ios-arrow-forward
+                  //.card-footer-a
+                    ul.card-info.d-flex.justify-content-around
+                      li
+                        h4.card-info-title Area
+                        span
+                          | 340m
+                          sup 2
+                      li
+                        h4.card-info-title Beds
+                        span 2
+                      li
+                        h4.card-info-title Baths
+                        span 4
+                      li
+                        h4.card-info-title Garages
+                        span 1
+
+  // / Services Star /
+  section.section-services.section-t8
+    .container
+      .row
+        .col-md-12
+          .title-wrap.d-flex.justify-content-between
+            .title-box
+              h2.title-a Services Offered
+      .row
+        .col-md-4
+          .card(style='text-align: center;-webkit-box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); -moz-box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); height: 100%;')
+            div
+              img(src='/img/buyhome.png' style='width: 100%; height: 180px; object-fit: cover;')
+            div(style='padding: 0px 10px;')
+              h5(style='font-size: 2em; padding: 10px 0px;') Buy a property
+              p(style='color: black;') Landnbuy gives you a chance to pick a property of your choice with sufficient data to guide you through the beautiful journey.
+        .col-md-4
+          .card(style='text-align: center;-webkit-box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); -moz-box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); height: 100%;')
+            div
+              img(src='/img/sellhome.png' style='width: 100%; height: 180px; object-fit: cover;')
+            div(style='padding: 0px 10px;')
+              h5(style='font-size: 2em; padding: 10px 0px;') Sell a property
+              p(style='color: black;') Find a buyer for your property at the comfort of your house. It's that easy!
+        .col-md-4
+          .card(style='text-align: center;-webkit-box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); -moz-box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); box-shadow: 0px 0px 21px 0px rgba(209,209,209,1); height: 100%;')
+            div
+              img(src='/img/renthome.png' style='width: 100%; height: 180px; object-fit: cover;')
+            div(style='padding: 0px 10px;')
+              h5(style='font-size: 2em; padding: 10px 0px;') Rent a property
+              p(style='color: black;') All your spaces of choice available at a click of a button
+  // / Services End /
+  section.section-special-request#section-special-request
+    div(style='max-width: 630px; margin: auto; font-size: 1.3em;')
+      h5(style='color: white; font-size: 2em; padding-bottom: 30px;') Special Request!
+      p We aim to please all our clients. In case you still cannot find what you require, we have you covered. Make a special request giving specific details of what you are looking for and we shall strive to find it for you.
+      button.btn.btn-b(onclick="$('#requestModal').modal('show');" type='submit' style='margin-top: 40px;') Make A Request 
+  // / Agents End /
+  a.back-to-top(href='#')
+    i.fa.fa-chevron-up
+  #preloader
+  // Make a Request Modal
+  #requestModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
+          h5#exampleModalLongTitle.modal-title Request A Property
+          button.close(type='button', data-dismiss='modal', aria-label='Close' style='float: right !important; font-size: 1.5rem !important; font-weight: 700 !important; line-height: 1; background: red; text-shadow: 0 1px 0 #fff; opacity: 0.9; color: white; border-radius: 50%; width: 35px; height: 35px; line-height: 1; position: absolute; right: 0px; top: -1px;')
+            span(aria-hidden='true' style='position: relative; top: -10px; left: -5px;') ×
+        .modal-body
+          form
+            .form-group
+              label(for='exampleInputEmail1' style='color: black;') Name
+              input#requestName.form-control(type='text' placeholder='Enter your name')
+            .form-group
+              label(for='exampleInputEmail1' style='color: black;') Email address
+              input#requestEmail.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter your email address')
+            .form-group
+              label(for='exampleInputEmail1' style='color: black;') Phone Number
+              input#requestPhoneNo.form-control(type='email', placeholder='Enter your phone number')
+            .form-group
+              label(for='propertyDetails' style='color: black;') Property Details
+              textarea#requestDetails.form-control(rows='3', placeholder='Enter property Details') 
+
+
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+          button.btn.btn-primary(type='button' onclick='requestProperty();' style='width: 150px; height: 39px;') 
+            span.theText  Send Request
+            span.dots(style='display: none;')
+              .loader__dot . 
+              .loader__dot . 
+              .loader__dot . 
+
+  // JavaScript Libraries
+  script(src='/lib/jquery/jquery.min.js')
+  script(src='/lib/jquery/jquery-migrate.min.js')
+  script(src='/lib/popper/popper.min.js')
+  script(src='/lib/bootstrap/js/bootstrap.min.js')
+  script(src='/lib/easing/easing.min.js')
+  script(src='/lib/owlcarousel/owl.carousel.min.js')
+  script(src='/lib/scrollreveal/scrollreveal.min.js')
+  script(src='/js/main.js')
+  block scripts
+    script(src='/js/search.js')
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvGf5TKlhCdBJ1_1oNibgsWKDLWaBdpxQ&libraries=places')

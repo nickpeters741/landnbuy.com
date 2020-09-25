@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    /* overflow: hidden; */
+    background: #0091F8;
+}
+
+.loginSignupForm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.customButton {
+    background: #0091F8;
+    color: white;
+    text-transform: uppercase;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+    margin-top: 20px;
+}

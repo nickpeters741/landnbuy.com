@@ -1,0 +1,34 @@
+.tableRow:hover {
+  cursor: pointer;
+}
+
+.tableRow:hover {
+  transition: 0.5s;
+}
+
+.displayImages li {
+  display: inline-block;
+  max-width: 200px;
+  padding: 10px 10px 10px 0px;
+}
+
+.amenitiesDisplay li {
+  display: inline-block;
+  margin: 10px 10px 10px 0px;
+  background: #0091F8;
+  padding: 6px 15px;
+  border-radius: 3px;
+  color: white;
+}
+
+.amenitiesDisplay {
+  padding: 0px;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show>.btn-secondary.dropdown-toggle {
+  color: white;
+  background-color: #0091F8;
+  border-color: #f7fafc;
+}

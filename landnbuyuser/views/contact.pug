@@ -1,0 +1,111 @@
+extends layout
+block content
+    // / Intro Single star /
+    section.intro-single
+      .container
+        .row
+          .col-md-12.col-lg-8
+            .title-single-box
+              h1.title-single We’d love to hear from you
+              span.color-text-a
+                | Whether you have a question about the features, listing a property, partnering with us or anything else, our team is ready to answer all your questions. Drop us a line and we will get back to you.
+          .col-md-12.col-lg-4
+            nav.breadcrumb-box.d-flex.justify-content-lg-end(aria-label='breadcrumb')
+              ol.breadcrumb
+                li.breadcrumb-item
+                  a(href='/') Home
+                li.breadcrumb-item.active(aria-current='page' style='background: white !important; color: black;')
+                  | Contact
+    // / Intro Single End /
+    // / Contact Star /
+    section.contact(style='padding-bottom: 15vh;')
+      .container
+        .row
+          .col-sm-12
+            .contact-map.box
+              #map.contact-map
+                iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15955.950374668884!2d36.9703617!3d-1.1692239!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf79f19ce605fbecb!2sA%20R%20C%20H%20Business%20Centre!5e0!3m2!1sen!2sus!4v1575397267300!5m2!1sen!2sus" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="")
+          .col-sm-12.section-t8
+            .row
+              .col-md-7
+                form.form-a.contactForm(action='', method='post', role='form')
+                  #sendmessage Your message has been sent. Thank you!
+                  #errormessage
+                  .row
+                    .col-md-6.mb-3
+                      .form-group
+                        input.form-control.form-control-lg.form-control-a#name(type='text', name='name', placeholder='Your Name', data-rule='minlen:4', data-msg='Please enter at least 4 chars')
+                        .validation
+                    .col-md-6.mb-3
+                      .form-group
+                        input.form-control.form-control-lg.form-control-a#email(name='email', type='email', placeholder='Your Email', data-rule='email', data-msg='Please enter a valid email')
+                        .validation
+                    .col-md-12.mb-3
+                      .form-group
+                        input.form-control.form-control-lg.form-control-a#subject(type='text', name='subject', placeholder='Subject', data-rule='minlen:4', data-msg='Please enter at least 8 chars of subject')
+                        .validation
+                    .col-md-12.mb-3
+                      .form-group
+                        textarea.form-control#message(name='message', cols='45', rows='8', data-rule='required', data-msg='Please write something for us', placeholder='Message')
+                        .validation
+                    div.btn.btn-a#contactustMessage(onclick='contactustMessage();') 
+                      #nextStep Send Message
+                      .loader(style='height: 1px; padding-bottom: 25px; display: none;')
+                        span.loader__dot .
+                        span.loader__dot .
+                        span.loader__dot .
+              .col-md-5.section-md-t3
+                .icon-box.section-b2
+                  .icon-box-icon
+                    span.ion-ios-paper-plane
+                  .icon-box-content.table-cell
+                    .icon-box-title
+                      h4.icon-title Say Hello
+                    .icon-box-content
+                      p.mb-1(style='color:black;')
+                        | Email:
+                        span.color-a(style='color:black; padding-left: 10px;') info@landnbuy.com
+                      p.mb-1(style='color:black;')
+                        | Phone:
+                        span.color-a(style='color:black; padding-left: 10px;') (+254) 700 080050 / 777 080050 / 101 080050
+                .icon-box.section-b2
+                  .icon-box-icon
+                    span.ion-ios-pin
+                  .icon-box-content.table-cell
+                    .icon-box-title
+                      h4.icon-title Find us in
+                    .icon-box-content
+                      p(style='color:black;').mb-1
+                        | A R C H Business Centre, Ruiru
+                .icon-box
+                  .icon-box-icon
+                    span.ion-ios-redo
+                  .icon-box-content.table-cell
+                    .icon-box-title
+                      h4.icon-title Social networks
+                    .icon-box-content
+                      .socials-footer
+                        ul.list-inline
+                          li.list-inline-item
+                            a(href='https://www.facebook.com/landnbuy' target='_blank')
+                              i.fa.fa-facebook#facebook(aria-hidden='true' style='font-size: 1.6em;margin-right: 10px;')
+                          li.list-inline-item
+                            a(href='https://twitter.com/landnbuy' target='_blank')
+                              i.fa.fa-twitter#twitter(aria-hidden='true' style='font-size: 1.6em;margin-right: 10px;')
+                          li.list-inline-item
+                            a(href='https://www.instagram.com/landnbuy/?hl=en' target='_blank')
+                              i.fa.fa-instagram#instagram(aria-hidden='true' style='font-size: 1.6em;margin-right: 10px;')
+    // / Contact End /
+    
+    a.back-to-top(href='#')
+      i.fa.fa-chevron-up
+    #preloader
+    // JavaScript Libraries
+    script(src='/lib/jquery/jquery.min.js')
+    script(src='/lib/jquery/jquery-migrate.min.js')
+    script(src='/lib/popper/popper.min.js')
+    script(src='/lib/bootstrap/js/bootstrap.min.js')
+    script(src='/lib/easing/easing.min.js')
+    script(src='/lib/owlcarousel/owl.carousel.min.js')
+    script(src='/lib/scrollreveal/scrollreveal.min.js')
+    script(src='/js/main.js')

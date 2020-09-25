@@ -1,0 +1,177 @@
+extends layout
+block content
+  section.intro-single
+    .container
+      .row
+        .col-sm-12
+          div(style='background: red; color: white; padding: 20px; max-width: 360px; border-radius: 5px;margin-bottom: 50px;')
+            p This property is awaiting confirmation. This will take 1 - 3 days. Thank you for your patience
+        .col-md-12.col-lg-8
+          .title-single-box
+            h1.title-single #{data[0].heading}
+            span.color-text-a #{data[0].location}
+        .col-md-8.col-md-4
+          nav.breadcrumb-box.d-flex.justify-content-lg-end(aria-label='breadcrumb')
+            ol.breadcrumb
+              li.breadcrumb-item
+                a(href='/') Home
+              li.breadcrumb-item
+                a(href='property-grid.html') Properties
+              li.breadcrumb-item.active(aria-current='page' style='color: black;background: white !important;')
+                | #{data[0].heading}
+        .col-sm-4
+          div(onclick='sharePage("'+propertyID+'")' style='cursor:pointer')
+            svg#Layer_1(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background: new 0 0 512 512; width: 50px; background: #0091F8; border-radius: 5px; padding: 12px; margin-top: 15px;', xml:space='preserve')
+              rect(x='136.268' y='330.038' transform='matrix(-0.8852 -0.4651 0.4651 -0.8852 325.138 757.3587)' style='fill: white;' width='239.456' height='17.066')
+              rect(x='247.491' y='53.674' transform='matrix(-0.4652 -0.8852 0.8852 -0.4652 221.626 480.7104)' style='fill: white;' width='17.067' height='239.467')
+              circle(style='fill: white;' cx='98.805' cy='256' r='90.817')
+              circle(style='fill: white;width: 20px;' cx='413.195' cy='421.183' r='90.817')
+              circle(style='fill: white;' cx='413.195' cy='90.817' r='90.817')
+
+
+  // / Intro Single End /
+  // / Property Single Star /
+  section.property-single.nav-arrow-b(style='padding-bottom:100px;')
+    .container
+      .row
+        .col-sm-12
+          #property-single-carousel.owl-carousel.owl-arrow.gallery-property
+            for image in data[0].images
+              .carousel-item-b
+                img(src='/uploads/' + image, alt='')
+          .row.justify-content-between
+            .col-sm-12(style='margin-bottom: 55px;')
+              if data[0].panorama != 0
+                p(style='color: black;') Panorama Images: Click the images below to view the panorama images
+                for image in data[0].panorama
+                  a(href='/panorama/'+image)
+                    img(src='/uploads/' + image, alt='' style='max-width: 200px; height: auto;')
+              else
+            .col-md-5.col-lg-4
+              .property-price.d-flex.justify-content-center.foo
+                .card-header-c.d-flex
+                  .card-title-c.align-self-center
+                    h5.title-c.card-box-ico KES #{Number(data[0].price).toLocaleString()}
+              .property-summary
+                .row
+                  .col-sm-12
+                    .title-box-d.section-t4
+                      h3.title-d Quick Summary
+                .summary-list
+                  ul.list
+                    li.d-flex.justify-content-between
+                      strong Property ID:
+                      span #{data[0]._id}
+                    li.d-flex.justify-content-between
+                      strong Location:
+                      span #{data[0].location}
+                    li.d-flex.justify-content-between
+                      strong Property Type:
+                      span #{data[0].category}
+                    li.d-flex.justify-content-between
+                      strong Status:
+                      span #{data[0].listingType}
+            .col-md-7.col-lg-7.section-md-t3
+              .row
+                .col-sm-12
+                  .title-box-d
+                    h3.title-d Property Description
+              .property-description
+                p.description.color-text-a #{data[0].description}
+              .row.section-t3
+                .col-sm-12
+                  .title-box-d
+                    h3.title-d Amenities
+              .amenities-list.color-text-a
+                ul.list-a.no-margin
+                    for amenity in amenities
+                        li #{amenity}
+        //.col-md-10.offset-md-1
+          ul#pills-tab.nav.nav-pills-a.nav-pills.mb-3.section-t3(role='tablist')
+            li.nav-item
+              a#pills-video-tab.nav-link.active(data-toggle='pill' href='#pills-video' role='tab' aria-controls='pills-video' aria-selected='true') Video
+            li.nav-item
+              a#pills-plans-tab.nav-link(data-toggle='pill' href='#pills-plans' role='tab' aria-controls='pills-plans' aria-selected='false') Floor Plans
+            li.nav-item
+              a#pills-map-tab.nav-link(data-toggle='pill' href='#pills-map' role='tab' aria-controls='pills-map' aria-selected='false') Ubication
+          #pills-tabContent.tab-content
+            #pills-video.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-video-tab')
+              iframe(src='https://player.vimeo.com/video/73221098' width='100%' height='460' frameborder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen='')
+            #pills-plans.tab-pane.fade(role='tabpanel' aria-labelledby='pills-plans-tab')
+              img.img-fluid(src='img/plan2.jpg' alt='')
+            #pills-map.tab-pane.fade(role='tabpanel' aria-labelledby='pills-map-tab')
+              iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834' width='100%' height='460' frameborder='0' style='border:0' allowfullscreen='')
+        //.col-md-12
+          .row.section-t3
+            .col-sm-12
+              .title-box-d
+                h3.title-d Contact Agent
+          .row
+            .col-md-6.col-lg-4
+              img.img-fluid(src='/img/agent-4.jpg' alt='')
+            .col-md-6.col-lg-4
+              .property-agent
+                h4.title-agent Anabella Geller
+                p.color-text-a
+                  | Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+                  | dui. Quisque velit nisi,
+                  | pretium ut lacinia in, elementum id enim.
+                ul.list-unstyled
+                  li.d-flex.justify-content-between
+                    strong Phone:
+                    span.color-text-a (222) 4568932
+                  li.d-flex.justify-content-between
+                    strong Mobile:
+                    span.color-text-a 777 287 378 737
+                  li.d-flex.justify-content-between
+                    strong Email:
+                    span.color-text-a annabella@example.com
+                  li.d-flex.justify-content-between
+                    strong Skype:
+                    span.color-text-a Annabela.ge
+                .socials-a
+                  ul.list-inline
+                    li.list-inline-item
+                      a(href='#')
+                        i.fa.fa-facebook(aria-hidden='true')
+                    li.list-inline-item
+                      a(href='#')
+                        i.fa.fa-twitter(aria-hidden='true')
+                    li.list-inline-item
+                      a(href='#')
+                        i.fa.fa-instagram(aria-hidden='true')
+                    li.list-inline-item
+                      a(href='#')
+                        i.fa.fa-pinterest-p(aria-hidden='true')
+                    li.list-inline-item
+                      a(href='#')
+                        i.fa.fa-dribbble(aria-hidden='true')
+            .col-md-12.col-lg-4
+              .property-contact
+                form.form-a
+                  .row
+                    .col-md-12.mb-1
+                      .form-group
+                        input#inputName.form-control.form-control-lg.form-control-a(type='text' placeholder='Name *' required='')
+                    .col-md-12.mb-1
+                      .form-group
+                        input#inputEmail1.form-control.form-control-lg.form-control-a(type='email' placeholder='Email *' required='')
+                    .col-md-12.mb-1
+                      .form-group
+                        textarea#textMessage.form-control(placeholder='Comment *' name='message' cols='45' rows='8' required='')
+                    .col-md-12
+                      button.btn.btn-a(type='submit') Send Message
+  // / Property Single End /
+  a.back-to-top(href='#')
+    i.fa.fa-chevron-up
+  #preloader
+  // JavaScript Libraries
+  script(src='/lib/jquery/jquery.min.js')
+  script(src='/lib/jquery/jquery-migrate.min.js')
+  script(src='/lib/popper/popper.min.js')
+  script(src='/lib/bootstrap/js/bootstrap.min.js')
+  script(src='/lib/easing/easing.min.js')
+  script(src='/lib/owlcarousel/owl.carousel.min.js')
+  script(src='/lib/scrollreveal/scrollreveal.min.js')
+  script(src='/js/main.js')
+  script(src='/js/share.js')

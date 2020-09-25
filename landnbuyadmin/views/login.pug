@@ -1,0 +1,95 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title
+      | landNbuy
+    // Favicon
+    link(href='/img/brand/favicon.png', rel='icon', type='image/png')
+    // Fonts
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700', rel='stylesheet')
+    // Icons
+    link(href='/js/plugins/nucleo/css/nucleo.css', rel='stylesheet')
+    link(href='/js/plugins/@fortawesome/fontawesome-free/css/all.min.css', rel='stylesheet')
+    // CSS Files
+    link(href='/css/argon-dashboard.css?v=1.1.0', rel='stylesheet')
+    link(href='/css/toast.css', rel='stylesheet')
+  body.bg-default
+    .main-content
+      // Navbar
+      nav.navbar.navbar-top.navbar-horizontal.navbar-expand-md.navbar-dark
+        .container.px-4
+          a.navbar-brand(href='../index.html')
+            | landNbuy
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar-collapse-main', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbar-collapse-main.collapse.navbar-collapse
+            // Collapse header
+            .navbar-collapse-header.d-md-none
+              .row
+                .col-6.collapse-brand
+                  a(href='/')
+                    | landNbuy
+                .col-6.collapse-close
+                  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar-collapse-main', aria-controls='sidenav-main', aria-expanded='false', aria-label='Toggle sidenav')
+                    span
+                    span
+            // Navbar items
+            ul.navbar-nav.ml-auto
+              li.nav-item
+                a.nav-link.nav-link-icon(href='/')
+                  i.ni.ni-planet
+                  span.nav-link-inner--text Dashboard
+              li.nav-item
+                a.nav-link.nav-link-icon(href='/signup')
+                  i.ni.ni-circle-08
+                  span.nav-link-inner--text Register
+      // Header
+      .header.bg-gradient-primary.py-7.py-lg-8
+        .container
+          .header-body.text-center.mb-7
+            .row.justify-content-center
+              .col-lg-5.col-md-6
+                h1.text-white Welcome!
+                p.text-lead.text-light Enter your details to access the admin page
+        .separator.separator-bottom.separator-skew.zindex-100
+          svg(x='0', y='0', viewBox='0 0 2560 100', preserveAspectRatio='none', version='1.1', xmlns='http://www.w3.org/2000/svg')
+            polygon.fill-default(points='2560 0 2560 100 0 100')
+      // Page content
+      .container.mt--8.pb-5
+        .row.justify-content-center
+          .col-lg-5.col-md-7
+            .card.bg-secondary.shadow.border-0
+              .card-body.px-lg-5.py-lg-5
+                form(role='form')
+                  .form-group.mb-3
+                    .input-group.input-group-alternative
+                      .input-group-prepend
+                        span.input-group-text
+                          i.ni.ni-email-83
+                      input.form-control#email(placeholder='Email', type='email')
+                  .form-group
+                    .input-group.input-group-alternative
+                      .input-group-prepend
+                        span.input-group-text
+                          i.ni.ni-lock-circle-open
+                      input.form-control#password(placeholder='Password', type='password')
+                  .text-center
+                    button.btn.btn-primary.my-4(type='button' onclick='login();') Sign in
+            .row.mt-3
+              .col-6
+                a.text-light(href='/reset-password')
+                  small Forgot password?
+              .col-6.text-right
+                a.text-light(href='/signup')
+                  small Create new account
+    #snackbar
+    // Core
+    script(src='/js/plugins/jquery/dist/jquery.min.js')
+    script(src='/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')
+    // Optional JS
+    // Argon JS
+    script(src='/js/argon-dashboard.min.js?v=1.1.0')
+    script(src='/js/toast.js')
+    script(src='/js/gloabal.js')

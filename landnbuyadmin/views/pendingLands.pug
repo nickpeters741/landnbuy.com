@@ -1,0 +1,192 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title
+      | landNbuy
+    // Favicon
+    link(href='/img/brand/favicon.png', rel='icon', type='image/png')
+    // Fonts
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700', rel='stylesheet')
+    // Icons
+    link(href='/js/plugins/nucleo/css/nucleo.css', rel='stylesheet')
+    link(href='/js/plugins/@fortawesome/fontawesome-free/css/all.min.css', rel='stylesheet')
+    // CSS Files
+    link(href='/css/argon-dashboard.css?v=1.1.0', rel='stylesheet')
+  body
+    nav#sidenav-main.navbar.navbar-vertical.fixed-left.navbar-expand-md.navbar-light.bg-white
+      .container-fluid
+        // Toggler
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#sidenav-collapse-main', aria-controls='sidenav-main', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        // Brand
+        a.navbar-brand.pt-0(href='./index.html')
+          | landNbuy
+        // User
+        ul.nav.align-items-center.d-md-none
+          li.nav-item.dropdown
+            a.nav-link.nav-link-icon(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              i.ni.ni-bell-55
+            .dropdown-menu.dropdown-menu-arrow.dropdown-menu-right(aria-labelledby='navbar-default_dropdown_1')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              .dropdown-divider
+              a.dropdown-item(href='#') Something else here
+          li.nav-item.dropdown
+            a.nav-link(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              .media.align-items-center
+                span.avatar.avatar-sm.rounded-circle
+                  img(alt='Image placeholder', src='/img/theme/vue.jpg')
+            .dropdown-menu.dropdown-menu-arrow.dropdown-menu-right
+              .dropdown-header.noti-title
+                h6.text-overflow.m-0 Welcome!
+              a.dropdown-item(href='./examples/profile.html')
+                i.ni.ni-single-02
+                span My profile
+              a.dropdown-item(href='./examples/profile.html')
+                i.ni.ni-settings-gear-65
+                span Settings
+              a.dropdown-item(href='./examples/profile.html')
+                i.ni.ni-calendar-grid-58
+                span Activity
+              a.dropdown-item(href='./examples/profile.html')
+                i.ni.ni-support-16
+                span Support
+              .dropdown-divider
+              a.dropdown-item(href='#!')
+                i.ni.ni-user-run
+                span Logout
+        // Collapse
+        #sidenav-collapse-main.collapse.navbar-collapse
+          // Collapse header
+          .navbar-collapse-header.d-md-none
+            .row
+              .col-6.collapse-brand
+                a(href='./index.html')
+                  | landNbuy
+              .col-6.collapse-close
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#sidenav-collapse-main', aria-controls='sidenav-main', aria-expanded='false', aria-label='Toggle sidenav')
+                  span
+                  span
+          // Form
+          form.mt-4.mb-3.d-md-none
+            .input-group.input-group-rounded.input-group-merge
+              input.form-control.form-control-rounded.form-control-prepended(type='search', placeholder='Search', aria-label='Search')
+              .input-group-prepend
+                .input-group-text
+                  span.fa.fa-search
+          // Navigation
+          ul.navbar-nav
+            li.nav-item(class='class=', active"='', "='')
+              a.nav-link.active(href='/')
+                i.ni.ni-tv-2.text-primary
+                |  Dashboard
+            li.nav-item
+              a.nav-link(href='/buildings/active')
+                i.ni.ni-planet.text-blue
+                |  Active Buildings
+            li.nav-item
+              a.nav-link(href='/buildings/pending')
+                i.ni.ni-planet.text-blue
+                |  Pending Buildings
+            li.nav-item
+              a.nav-link(href='/lands/active')
+                i.ni.ni-pin-3.text-orange
+                |  Active Lands
+            li.nav-item
+              a.nav-link(href='/lands/pending')
+                i.ni.ni-pin-3.text-orange
+                |  Pending Lands
+            li.nav-item
+              a.nav-link(href='/interviews')
+                i.ni.ni-single-02.text-yellow
+                |  Interviews
+            li.nav-item
+              a.nav-link(href='/agents')
+                i.ni.ni-single-02.text-yellow
+                |  Agents
+          // Divider
+          hr.my-3
+          // Heading
+          h6.navbar-heading.text-muted Settings
+          // Navigation
+          ul.navbar-nav.mb-md-3
+            li.nav-item
+              a.nav-link(href='/logout')
+                i.ni.ni-spaceship
+                |  Logout
+    .main-content
+      // Navbar
+      nav#navbar-main.navbar.navbar-top.navbar-expand-md.navbar-dark
+        .container-fluid
+          // Brand
+          a.h4.mb-0.text-white.text-uppercase.d-none.d-lg-inline-block(href='./index.html') Dashboard
+          // Form
+          form.navbar-search.navbar-search-dark.form-inline.mr-3.d-none.d-md-flex.ml-lg-auto
+            .form-group.mb-0
+              .input-group.input-group-alternative
+                .input-group-prepend
+                  span.input-group-text
+                    i.fas.fa-search
+                input.form-control(placeholder='Search', type='text')
+          // User
+          ul.navbar-nav.align-items-center.d-none.d-md-flex
+            li.nav-item.dropdown
+              a.nav-link.pr-0(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                .media.align-items-center
+                  span.avatar.avatar-sm.rounded-circle
+                    img(alt='Image placeholder', src='/img/theme/vue.jpg')
+                  .media-body.ml-2.d-none.d-lg-block
+                    span.mb-0.text-sm.font-weight-bold Unknown
+              .dropdown-menu.dropdown-menu-arrow.dropdown-menu-right
+                .dropdown-header.noti-title
+                  h6.text-overflow.m-0 Welcome!
+                a.dropdown-item(href='./examples/profile.html')
+                  i.ni.ni-single-02
+                  span My profile
+                a.dropdown-item(href='./examples/profile.html')
+                  i.ni.ni-settings-gear-65
+                  span Settings
+                a.dropdown-item(href='./examples/profile.html')
+                  i.ni.ni-calendar-grid-58
+                  span Activity
+                a.dropdown-item(href='./examples/profile.html')
+                  i.ni.ni-support-16
+                  span Support
+                .dropdown-divider
+                a.dropdown-item(href='#!')
+                  i.ni.ni-user-run
+                  span Logout
+      // End Navbar
+      // Header
+      .header.bg-gradient-primary.pb-8.pt-5.pt-md-8
+        .container-fluid
+          .header-body
+            // Card stats
+            .row(style='padding-left: 2vw;')
+              p(style='color: white; font-size: 3em; font-weight: bold; padding-left: 15px; border-left: solid white 6px;')  Pending Lands
+      .section.pendingBuildings
+        table.table.table-striped(style='width: 80%; margin: 5% auto;')
+          thead
+            tr(style='background: #0091F8; color: white;')
+              th(scope='col') #
+              th(scope='col') Heading
+              th(scope='col') Category
+              th(scope='col') Location
+              th(scope='col') price
+          tbody
+            for land, index in lands
+              tr.tableRow(onclick='getLand("'+land._id+'")')
+                th(scope='row') #{index}
+                td #{land.heading}
+                td #{land.category}
+                td #{land.location}
+                td #{land.price}
+
+    script(src='/js/plugins/jquery/dist/jquery.min.js')
+    script(src='/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')
+    script(src='/js/plugins/chart.js/dist/Chart.min.js')
+    script(src='/js/plugins/chart.js/dist/Chart.extension.js')
+    script(src='/js/argon-dashboard.min.js?v=1.1.0')
+    script(src='/js/gloabal.js')

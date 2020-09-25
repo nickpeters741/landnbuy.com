@@ -1,0 +1,54 @@
+extends layout
+block content
+  // / Intro Single star /
+  section.intro-single
+    .container
+      .row
+        .col-md-12.col-lg-8
+          .title-single-box
+            h1.title-single Become an Agent #Stage Three
+            span.color-text-a(style='color: black !important;')
+              | Upload your contract and you'll be all set. Download the contract 
+              a(href='/documents/partnershipContract.pdf' style='color: blue;' target='_blank') here
+  // / Intro Single End /
+  // / Stage 2 Interview  Start/
+  section.contact
+  .container
+      .row
+        .col-sm-12
+          a(href='/documents/partnershipContract.pdf' style='color: blue;' target='_blank') 
+            button(style='background: #0091F8; color: white; padding: 10px 30px; border: none;') DOWNLOAD CONTRACT
+      .col-sm-12.section-t8
+          form(style='margin-bottom: 80px;')
+            .row
+              .col-md-12
+                form.form-a.contactForm(action='' method='post' role='form')
+                    #errormessage
+                    .row
+                      .col-sm-12(style='padding-bottom: 15px; margin-bottom: 60px;')
+                        span(style='color: #9a9a9a;') Upload contract 
+                            span(style='color: red;') *
+                        div(style='margin-top:5px;')
+                            .form-group(style='margin-top: 5px;')
+                            input.form-control.form-control-lg.form-control-a#contract(name='photo' type='file' placeholder='Bedrooms' style='border:none;')
+
+                      .col-md-12
+                        div.btn.btn-a(onclick='step3('+JSON.stringify(userID)+');') Complete  
+  // / Stage 2 Interview  End/
+
+  a.back-to-top(href='#')
+    i.fa.fa-chevron-up
+  #preloader
+  // JavaScript Libraries
+  script(src='/lib/jquery/jquery.min.js')
+  script(src='/lib/jquery/jquery-migrate.min.js')
+  script(src='/lib/popper/popper.min.js')
+  script(src='/lib/bootstrap/js/bootstrap.min.js')
+  script(src='/lib/easing/easing.min.js')
+  script(src='/lib/owlcarousel/owl.carousel.min.js')
+  script(src='/lib/scrollreveal/scrollreveal.min.js')
+  script(src='/js/main.js')
+  script(src='/js/moment.js')
+  script(src='/js/agentSignup.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js')
+

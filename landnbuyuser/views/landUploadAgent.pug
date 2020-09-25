@@ -1,0 +1,239 @@
+extends layout
+block content
+    // / Intro Single star /
+    section.intro-single
+      .container
+        .row
+          .col-md-12.col-lg-8
+            .title-single-box
+              h1.title-single List Land
+              span.color-text-a(style='color: black !important;')
+                //| Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.
+    // / Intro Single End /
+    // / Contact Star /
+    section.contact(style='padding-bottom: 15vh;')
+      .container
+        .row
+          .col-sm-12.section-t8
+            .row
+              .col-md-12
+                form.form-a.contactForm(action='', method='post', role='form')
+                  #sendmessage Your message has been sent. Thank you!
+                  #errormessage
+                  .row
+                    .col-sm-12(style='padding-bottom: 15px;')
+                      span(style='color: #9a9a9a;') Heading 
+                        span(style='color: red;') *
+                      .form-group(style='margin-top: 5px;')
+                        input.form-control.form-control-lg.form-control-a(type='text', name='heading' id='heading', placeholder='Enter heading')
+                        .validation
+                    .col-md-12(style='padding-bottom: 15px;')
+                      span(style='color: #9a9a9a;') Description 
+                        span(style='color: red;') *
+                      textarea#description(class="span6" rows="3" placeholder="Description" required style='width:100%; border: solid #dadada 1px; margin-top: 5px;')
+                    .col-md-3.col-sm-6
+                      span(style='color: #9a9a9a;') Price 
+                            span(style='color: red;') *
+                      .form-group(style='margin-top: 5px;')
+                        input#price.form-control.form-control-lg.form-control-a(name='price', placeholder='Price')
+                        .validation
+                    .col-sm-12.col-md-6(style='padding-bottom: 15px;')
+                      span(style='color: #9a9a9a; float: left;') Commission 
+                        span(style='color: red;') *
+                      div(style='float: left; margin-top: -1px')
+                        .btn-group.btn-group-toggle(data-toggle='buttons')
+                          label.btn.btn-secondary.active(style='color: white;line-height: 1;')
+                            input#option1(type='radio', name='options', autocomplete='off', checked='' onchange='commissionState();')
+                            |  Percentage
+                          label.btn.btn-secondary(style='color: white;line-height: 1;')
+                            input#option2(type='radio', name='options', autocomplete='off' onchange='commissionState();')
+                            |  Cash
+                      .form-group(style='margin-top: 5px;')
+                        input.form-control.form-control-lg.form-control-a(type='number', name='commission' id='commission', placeholder='Enter desired commisssion in KES')
+                        .validation
+                    .col-md-6.mb-2
+                      .form-group
+                        label(for='county' style='color: #9a9a9a; float: left;') County
+                        select#county.form-control.form-control-lg.form-control-a(name='county')
+                          option Nairobi
+                          option Baringo
+                          option Bomet
+                          option Bungoma
+                          option Busia
+                          option Elgeyo-Marakwet
+                          option Embu
+                          option Garissa
+                          option Homa Bay
+                          option Isiolo
+                          option Kajiado
+                          option Kakamega
+                          option Kericho
+                          option Kiambu
+                          option Kilifi
+                          option Kirinyaga
+                          option Kisii
+                          option Kisumu
+                          option Kitui
+                          option Kwale
+                          option Laikipia
+                          option Lamu
+                          option Machakos
+                          option Makueni
+                          option Mandera
+                          option Marsabit
+                          option Meru
+                          option Migori
+                          option Mombasa
+                          option Murang'a
+                          option Nakuru
+                          option Nandi
+                          option Narok
+                          option Nyamira
+                          option Nyandarua
+                          option Nyeri
+                          option Samburu
+                          option Siaya
+                          option Taita–Taveta
+                          option Tana River
+                          option Tharaka-Nithi
+                          option Trans-Nzoia
+                          option Turkana
+                          option Uasin Gishu
+                          option Vihiga
+                          option Wajir
+                          option West Pokot
+                    .col-md-6.col-sm-12
+                      span(style='color: #9a9a9a;') Location 
+                            span(style='color: red;') *
+                      .form-group(style='margin-top: 5px;')
+                        input.form-control.form-control-lg.form-control-a#location(name='location', placeholder='Location')
+                        .validation
+                    .col-sm-12.col-md-6(style='padding-bottom: 15px;')
+                      span(style='color: #9a9a9a;') Google Location 
+                      .form-group(style='margin-top: 5px;')
+                        input.form-control.form-control-lg.form-control-a( name='googleLocation' id='googleLocation', placeholder='Enter google location location')
+                        .validation
+                    .row(style='margin: 0px; width: 100%;')
+                      .col-sm-12.col-md-6(style='padding-bottom: 15px;')
+                        span(style='color: #9a9a9a;') Owner Name 
+                          span(style='color: red;') *
+                        .form-group(style='margin-top: 5px;')
+                          input.form-control.form-control-lg.form-control-a( name='ownerName' id='ownerName' placeholder="Enter owner's name")
+                          .validation
+                      .col-sm-12.col-md-6(style='padding-bottom: 15px;')
+                        span(style='color: #9a9a9a;') Owner Phone Number 
+                        .form-group(style='margin-top: 5px;')
+                          input.form-control.form-control-lg.form-control-a( name='owenerPhoneNumber' id='owenrPhoneNumber' type='number' placeholder="Enter owner's phone number")
+                          .validation
+                    .col-sm-12.col-md-6(style='margin-bottom: 25px;')
+                      span(style='color: #9a9a9a;') Category 
+                                span(style='color: red;') *
+                      .input-group.mb-3(style='padding-top: 10px;')
+                        .input-group-prepend
+                          label.input-group-text#categorySelect(for='category' style='background: #0095F1; color: white;') Options
+                        select#category.custom-select
+                          option(selected='commercial') Commercial
+                          option(value='residential') Residential
+                          option(value='industrial') Industrial
+                          option(value='agricultural') Agricultural
+
+                    
+                    .col-md-12(style='padding-bottom: 15px;')
+                      .row
+                        .col-sm-4
+                          .row
+                            .col-sm-12(style='margin-bottom: 20px;')
+                              span(style='color: #9a9a9a;') Listing Type 
+                                span(style='color: red;') *
+                              div.listingType(style='margin-top: 5px;')
+                                .listingCard.isActive#forSale(active onclick='listingType("forSale");') For Sale
+                                .listingCard#forRent(onclick='listingType("forRent");') For Rent
+                        //.col-sm-8
+                          span(style='color: #9a9a9a;') Category 
+                            span(style='color: red;') *
+                          div.categories(style='margin-top: 5px;')
+                            .listingCard.isActive#categoryCommercialProperties(onclick="categoryType('categoryCommercialProperties');" active) Commercial Properties
+                            .listingCard#categoryOffices(onclick="categoryType('categoryOffices');") Offices
+                            .listingCard#categoryBungalows(onclick="categoryType('categoryBungalows');") Bungalows
+                            .listingCard#categoryShops(onclick="categoryType('categoryShops');") Shops
+                            .listingCard#categoryHouses(onclick="categoryType('categoryHouses');") Houses
+                            .listingCard#categoryTownhouses(onclick="categoryType('categoryTownhouses');") Townhouses
+                      .row
+                        //.col-sm-4
+                          .row
+                            .col-sm-12
+                              span(style='color: #9a9a9a;') Type 
+                                span(style='color: red;') *
+                              div.houseType(style='margin-top: 5px;')
+                                p.listingCard#bedsitterType(onclick='houseType("bedsitterType");') BedSitter
+                                p.listingCard.isActive#apartmentType(onclick='houseType("apartmentType");' active) Apartment
+                                p.listingCard#serverntsQuaterType(onclick='houseType("serverntsQuaterType");') Servants Quater
+                        .col-sm-8
+                          span(style='color: #9a9a9a;') Amenities 
+                            span(style='color: red;') 
+                          div(style='margin-top: 5px;')
+                            ul.smallCards(style='padding: 0;')
+                            p(style='background: green; display: inline-block;padding: 6px 13px;border-radius: 3px; color: white;margin: 0px 10px 10px 0px;font-size: 1.5em;line-height: 1;' onclick="$('#addAmenities').modal('show');") +
+                    //.col-md-3.col-sm-6
+                      span(style='color: #9a9a9a;') Bedrooms 
+                            span(style='color: red;') *
+                      .form-group(style='margin-top: 5px;')
+                        input#bedrooms.form-control.form-control-lg.form-control-a(name='bedrooms',placeholder='Bedrooms')
+                        .validation
+                    .col-sm-8
+                      span(style='color: #9a9a9a;') Images 
+                        span(style='color: red;') *
+                      div(style='margin-top:5px;')
+                        .form-group(style='margin-top: 5px;')
+                          input#image.file(name='photo', type='file', multiple='', data-show-upload='true', data-show-caption='true')
+                          //input.form-control.form-control-lg.form-control-a#image(name='photo', type='file', placeholder='Bedrooms' style='border:none;')
+                        #imagePreview
+                    .col-sm-8
+                      span(style='color: #9a9a9a;') Panoroma Images (360 images) 
+                        span(style='color: red;') 
+                      div(style='margin-top:5px;')
+                        .form-group(style='margin-top: 5px;')
+                          input#panorama.file(name='panorama' type='file' multiple='' data-show-upload='true' data-show-caption='true')
+                        #panoramaPreview
+                          
+                    .col-md-12
+                      div.btn.btn-a(id='agentID' agent=agentID onclick='submitLand("agent");') 
+                        #nextStep POST
+                        .loader(style='height: 1px; padding-bottom: 25px; display: none;')
+                          span.loader__dot .
+                          span.loader__dot .
+                          span.loader__dot .
+
+                    
+    //Add amenities modal
+    #addAmenities.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+      .modal-dialog.modal-dialog-centered(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLongTitle.modal-title Select Amenities
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            div.amenitiesArray
+              p.listingCard#waterAmenity(onclick='amenity("waterAmenity");') Water
+              p.listingCard#securityAmenity(onclick='amenity("securityAmenity");') Secure
+              p.listingCard#schoolAmenity(onclick='amenity("schoolAmenity");') School
+              p.listingCard#hospitalAmenity(onclick='amenity("hospitalAmenity");') Hospital
+            div(style='text-align: center; margin-top: 20px; margin-bottom: 20px;')
+              .submitAmenities(onclick='saveAmenities()' data-dismiss='modal') Submit
+
+
+    // / Contact End /
+    a.back-to-top(href='#')
+      i.fa.fa-chevron-up
+    #preloader
+    // JavaScript Libraries
+    script(src='/lib/jquery/jquery.min.js')
+    script(src='/lib/jquery/jquery-migrate.min.js')
+    script(src='/lib/popper/popper.min.js')
+    script(src='/lib/bootstrap/js/bootstrap.min.js')
+    script(src='/lib/easing/easing.min.js')
+    script(src='/lib/owlcarousel/owl.carousel.min.js')
+    script(src='/lib/scrollreveal/scrollreveal.min.js')
+    script(src='/js/main.js')
+    script(src='/js/listProperty.js')

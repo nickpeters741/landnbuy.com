@@ -1,0 +1,57 @@
+extends layout
+block content
+  // / Intro Single star /
+  section.intro-single
+    .container
+      .row
+        .col-md-12.col-lg-8
+          .title-single-box
+            h1.title-single List Land
+            span.color-text-a(style='color: black !important;')
+              | Are you the owner or an agent of the land? 
+  // / Intro Single End /
+  // / Contact Star /
+  section.contact(style='padding-bottom: 20%;')
+    .row(style='max-width: 600px; margin: auto;')
+      .col-sm-12.col-md-6(style='cursor: pointer;')
+        a(href='/list-property/land/owner' style='cursor: pointer; text-align: center; font-size: 1.5em; height: 120px; margin-left: -10px;')
+          button(style=' background: #0091F8; color: white; border: none; width: 260px; height: 100px; border-radius: 5px;') Owner
+      .col-sm-12.col-md-6(style='cursor: pointer;')
+        a(href='/list-property/land/agent' style='cursor: pointer; text-align: center; font-size: 1.5em; height: 120px; margin-right: 10px;')
+          button(style=' background: #0091F8; color: white; border: none; width: 260px; height: 100px; border-radius: 5px;') Agent
+
+  //Add amenities modal
+  #addAmenities.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
+          h5#exampleModalLongTitle.modal-title Select Amenities
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') ×
+        .modal-body
+          div.amenitiesArray
+            p.listingCard#parkingAmenity(onclick='amenity("parkingAmenity");') Parking
+            p.listingCard#balconyAmenity(onclick='amenity("balconyAmenity");') Balcony
+            p.listingCard#cabletvAmenity(onclick='amenity("cabletvAmenity");') Cable Tv
+            p.listingCard#internetAmenity(onclick='amenity("internetAmenity");') Internet
+            p.listingCard#cctvAmenity(onclick='amenity("cctvAmenity");') CCTV
+            p.listingCard#elevetorAmenity(onclick='amenity("elevetorAmenity");') Elevetor 
+            p.listingCard#waterAmenity(onclick='amenity("waterAmenity");') Water
+          div(style='text-align: center; margin-top: 20px; margin-bottom: 20px;')
+            .submitAmenities(onclick='saveAmenities()' data-dismiss='modal') Submit
+
+
+  // / Contact End /
+  a.back-to-top(href='#')
+    i.fa.fa-chevron-up
+  #preloader
+  // JavaScript Libraries
+  script(src='/lib/jquery/jquery.min.js')
+  script(src='/lib/jquery/jquery-migrate.min.js')
+  script(src='/lib/popper/popper.min.js')
+  script(src='/lib/bootstrap/js/bootstrap.min.js')
+  script(src='/lib/easing/easing.min.js')
+  script(src='/lib/owlcarousel/owl.carousel.min.js')
+  script(src='/lib/scrollreveal/scrollreveal.min.js')
+  script(src='/js/main.js')
+  script(src='/js/agentSignup.js')

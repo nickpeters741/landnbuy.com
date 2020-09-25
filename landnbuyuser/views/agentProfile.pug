@@ -1,0 +1,113 @@
+extends layout
+block content
+  // / Intro Single star /
+  section.intro-single
+    .container
+      .row
+        .col-md-12.col-lg-8
+          .title-single-box
+            p(style='color: #6d6d6d; margin: 0px;') #{user.agentInfo[0].firstName} #{user.agentInfo[0].lastName}
+            h1.title-single Agent Portal
+            span.color-text-a(style='color: black !important;')
+  // / Intro Single End /
+  // / Contact Star /
+  section.intro-single(style='padding-top: 5rem !important;')
+    .container
+      .row(style='margin-bottom: 40px;')
+        .col-md-12.col-lg-8(style='padding: 0px; border-bottom: solid black 1px; margin-bottom: 26px;')
+          h4 Personal Settings
+        .row
+          .col-sm-12.col.md-12
+            p(style='color: black;') Name: #{user.agentInfo[0].firstName} #{user.agentInfo[0].lastName}
+          .col-sm-12.col.md-12
+            p(style='color: black;') Phone: #{user.agentInfo[0].phoneNo} 
+
+          .col-sm-12.col.md-12
+            p(style='color: black;') Email: #{user.local.email}
+          .col-sm-12.col.md-12
+            p(style='color: black;') Location: #{user.agentInfo[0].location} 
+
+          .col-sm-12.col.md-12
+            p(style='color: black;') Referee: #{user.agentInfo[0].referee}
+          .col-sm-12.col.md-12
+            p(style='color: black;') Referee Contact: #{user.agentInfo[0].refereeContact} 
+      .row(style='margin-bottom: 40px;')
+        .col-sm-12(style='padding: 0px;')
+          if buildings.length == 0
+            .col-md-12.col-lg-8(style='padding: 0px; border-bottom: solid black 1px; margin-bottom: 26px;')
+              h5 Buildings Uploaded
+            p(style='color: black;') none  
+          else
+            for building in buildings
+              img(src='/uploads/'+building.images[0], width='50px')
+      .row(style='margin-bottom: 40px;')
+        .col-md-12.col-lg-8(style='padding: 0px; border-bottom: solid black 1px; margin-bottom: 26px;')
+          h5 Lands Uploaded
+        .col-md-12(style='padding: 0;')
+          if lands.length == 0
+
+            p(style='color: black;') none  
+          else
+            for land in lands
+              img(src='/uploads/'+land.images[0], width='50px')
+      .row(style='margin-bottom: 40px;')
+        .col-md-12.col-lg-8(style='padding: 0px; border-bottom: solid black 1px; margin-bottom: 26px;')
+          h5 Documents
+        .col-md-12(style='padding: 0;')
+          p( style='color:black;') Click on the list below to download the documents
+          ul
+            li
+              a(target='_blank' href='/documents/authority.pdf' style='color:#0095F1;') - Commercial Buildings or Office Spaces Questionnaire
+            li
+              a(target='_blank' href='/documents/commercial.pdf' style='color:#0095F1;') - Houses or Rentals Questionnaire
+            li 
+              a(target='_blank' href='/documents/houses.pdf' style='color:#0095F1;') - Land Questionnaire
+            li
+              a(target='_blank' href='/documents/land.pdf' style='color:#0095F1;') - Authority to Sell
+  section.row
+    .col-sm-12
+
+  section.contact(style='padding-bottom: 20%;')
+    .row(style='max-width: 600px; margin: auto;')
+      .col-sm-12.col-md-6(style='cursor: pointer;')
+        a(href='/list-property/building/agent' style='cursor: pointer; text-align: center; font-size: 1.5em; height: 120px; margin-left: -10px;')
+          button(style=' background: #0091F8; color: white; border: none; width: 260px; height: 100px; border-radius: 5px;') Upload Building
+      .col-sm-12.col-md-6(style='cursor: pointer;')
+        a(href='/list-property/land/agent' style='cursor: pointer; text-align: center; font-size: 1.5em; height: 120px; margin-right: 10px;')
+          button(style=' background: #0091F8; color: white; border: none; width: 260px; height: 100px; border-radius: 5px;') Upload Land
+
+  //Add amenities modal
+  #addAmenities.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
+          h5#exampleModalLongTitle.modal-title Select Amenities
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') ×
+        .modal-body
+          div.amenitiesArray
+            p.listingCard#parkingAmenity(onclick='amenity("parkingAmenity");') Parking
+            p.listingCard#balconyAmenity(onclick='amenity("balconyAmenity");') Balcony
+            p.listingCard#cabletvAmenity(onclick='amenity("cabletvAmenity");') Cable Tv
+            p.listingCard#internetAmenity(onclick='amenity("internetAmenity");') Internet
+            p.listingCard#cctvAmenity(onclick='amenity("cctvAmenity");') CCTV
+            p.listingCard#elevetorAmenity(onclick='amenity("elevetorAmenity");') Elevetor 
+            p.listingCard#waterAmenity(onclick='amenity("waterAmenity");') Water
+          div(style='text-align: center; margin-top: 20px; margin-bottom: 20px;')
+            .submitAmenities(onclick='saveAmenities()' data-dismiss='modal') Submit
+
+
+  // / Contact End /
+  a.back-to-top(href='#')
+    i.fa.fa-chevron-up
+  #preloader
+  // JavaScript Libraries
+  script(src='/lib/jquery/jquery.min.js')
+  script(src='/lib/jquery/jquery-migrate.min.js')
+  script(src='/lib/popper/popper.min.js')
+  script(src='/lib/bootstrap/js/bootstrap.min.js')
+  script(src='/lib/easing/easing.min.js')
+  script(src='/lib/owlcarousel/owl.carousel.min.js')
+  script(src='/lib/scrollreveal/scrollreveal.min.js')
+  script(src='/js/main.js')
+  script(src='/js/agentSignup.js')
